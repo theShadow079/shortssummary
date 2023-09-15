@@ -20,7 +20,7 @@ form.addEventListener("submit", async (event) => {
   const transcription = await server.get("/summary/" + videoID);
 
   content.textContent = "Realizando o resumo...";
-
+  //para usar a função transcription, comente o const summary, e troque o summary.data por transcription.data
   const summary = await server.post("/summary", {
     text: transcription.data.result,
   });
